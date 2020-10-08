@@ -27,5 +27,5 @@ app.post('/entries', (req, res) => {
 })
 
 app.listen(process.env.PORT, '0.0.0.0', () => {
-    console.log(`Portfolio backend running on ${process.env.PORT} ...`)
+    console.log(`Profile backend running on ${process.env.PORT} ...`)
 })

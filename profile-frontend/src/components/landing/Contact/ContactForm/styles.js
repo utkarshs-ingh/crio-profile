@@ -17,3 +17,12 @@ export const InputField = styled.div`
   position: relative;
   margin-bottom: 1rem;
 `;
+
+export const Wrapper = styled.div`
+  .submit-btn {
+    background: ${({ theme }) => (theme === 'light' ? '#005554' : '#66BD88')};
+    margin-right: 20px;
+    border: 3px solid ${({ theme }) => (theme === 'light' ? '#005554' : '#66BD88')};
+    font-weight: bold;
+  }
+`;

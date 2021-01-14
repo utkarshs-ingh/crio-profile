@@ -1,13 +1,27 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  .menu a {
+    color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 960px) {
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   a {
     color: #000;
     text-decoration: none;
 
-		@media (max-width: 960px) {
-			color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-		}
+    @media (max-width: 960px) {
+      color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+    }
   }
 
   ${({ desktop }) =>

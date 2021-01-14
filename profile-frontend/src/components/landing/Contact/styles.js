@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 4rem 0;
@@ -38,6 +38,9 @@ export const Details = styled.div`
 
 export const Thumbnail = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   @media (max-width: 960px) {
     width: 100%;
@@ -45,6 +48,6 @@ export const Thumbnail = styled.div`
   }
 
   img {
-    width: 100%;
+    width: 50%;
   }
 `;

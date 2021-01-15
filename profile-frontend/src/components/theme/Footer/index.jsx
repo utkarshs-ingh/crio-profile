@@ -6,10 +6,10 @@ import crio from 'assets/illustrations/crio.png';
 import linkedinLogo from 'assets/illustrations/linkedin_logo.png';
 import githubLogo from 'assets/illustrations/github_logo.png';
 
-import { Wrapper, Flex, Links, Details } from './styles';
+import { Wrapper, Flex, Details } from './styles';
 
 export const Footer = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <Wrapper>
       <Flex>
@@ -22,7 +22,7 @@ export const Footer = () => {
 
                 <div className="powered">
                   <p>Powered By</p>
-                  <a href="https://www.crio.do" target="_blank">
+                  <a href="https://www.crio.do" target="_blank" rel="noreferrer">
                     {' '}
                     <img width="120" src={crio} alt="Crio" />
                   </a>
@@ -30,10 +30,10 @@ export const Footer = () => {
               </div>{' '}
               <div>
                 {' '}
-                <a href={linkedinUrl} target="_blank">
+                <a href={linkedinUrl} target="_blank" rel="noreferrer">
                   <img width="45" src={linkedinLogo} alt="Linkedin" />
                 </a>
-                <a href={githubUrl} target="_blank">
+                <a href={githubUrl} target="_blank" rel="noreferrer">
                   <img width="45" src={githubLogo} alt="GitHub" />
                 </a>
               </div>

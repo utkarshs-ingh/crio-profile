@@ -84,3 +84,20 @@ export const Thumbnail = styled.div`
     width: 70%;
   }
 `;
+
+export const AboutStyle = styled.div`
+flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+  h3 {
+    fontSize: 14,
+    color: "#4a54f1",
+    textAlign: "center",
+    paddingTop: "100px",
+  }
+`;

@@ -18,31 +18,31 @@ export default () => (
       validationSchema={Yup.object().shape({
         name: Yup.string().required('Full name field is required'),
         email: Yup.string()
-          // TODO: add the email validation here
-          .required('Email field is required'),
+          .required('Email field is required').email('Please enter a valid email'),
         message: Yup.string().required('Message field is required'),
       })}
       onSubmit={async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
         try {
-          await axios({
-            method: 'POST',
-            url: `${process.env.BACKEND_URL}`,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            data: JSON.stringify({
-              name,
-              email,
-              message,
-            }),
-          });
-          setSubmitting(false);
-          setFieldValue('success', true);
-          setTimeout(() => resetForm(), 6000);
+            
+            await axios({
+                method: 'POST',
+                url: 'https://jsonplaceholder.typicode.com/posts',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                data: JSON.stringify({
+                name,
+                email,
+                message,
+                }),
+            });
+            setSubmitting(false);
+            setFieldValue('success', true);
+            setTimeout(() => resetForm(), 6000);
         } catch (err) {
-          setSubmitting(false);
-          setFieldValue('success', false);
-          alert("Something went wrong, please try again!"); // eslint-disable-line
+            setSubmitting(false);
+            setFieldValue('success', false);
+            alert("Something went wrong, please try again!"); // eslint-disable-line
         }
       }}
     >

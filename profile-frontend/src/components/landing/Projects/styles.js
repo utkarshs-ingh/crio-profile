@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   padding: 2rem 0;
+ img {
+    border-radius: 5px; 
+    background: ${({ theme }) => (theme === 'light' ? '#c7c7c7' : '#707070')};
+  }
 `;
 
 export const Grid = styled.div`

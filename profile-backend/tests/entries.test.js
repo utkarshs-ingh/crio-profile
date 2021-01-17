@@ -2,11 +2,11 @@ const entries = require('../entries')
 
 test('check whether entries are being stored', () => {
     entry = {
-        name: 'Anas Khan',
-        email: 'anas@gmail.com',
-        message: 'I would love to work with you',
+        name: 'Utkarsh singh',
+        email: 'test@gmail.com',
+        message: 'ok',
     }
     entries.putEntry(entry)
     fetchedEntries = entries.getEntries()
-    expect(fetchedEntries.pop()).toBe(entry)
+    expect(fetchedEntries.pop()).toStrictEqual(entry)
 })

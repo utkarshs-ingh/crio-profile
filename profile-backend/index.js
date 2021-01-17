@@ -5,6 +5,7 @@ let bodyParser = require('body-parser')
 let entries = require('./entries')
 const dotenv = require('dotenv')
 
+let PORT = process.env.PORT || 3000;
 dotenv.config()
 let app = express()
 app.use(morgan('dev'))
@@ -12,7 +13,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.get('/', (_, res) => {
-    res.send('Hello from the profile backend!')
+    res.send('Hello from the backend!')
 })
 
 app.get('/entries', (_, res) => {
@@ -26,6 +27,6 @@ app.post('/entries', (req, res) => {
     res.sendStatus(200)
 })
 
-app.listen(process.env.PORT, '0.0.0.0', () => {
-    console.log(`Profile backend running on ${process.env.PORT} ...`)
+app.listen(PORT, () => {
+    console.log(`Profile backend running on ${PORT} ...`)
 })

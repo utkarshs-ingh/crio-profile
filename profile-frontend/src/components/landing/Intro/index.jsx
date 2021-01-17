@@ -5,16 +5,18 @@ import { ThemeContext } from 'providers/ThemeProvider';
 import { Header } from 'components/theme';
 import { Container, Button } from 'components/common';
 import heroImage from 'assets/illustrations/Header.png';
-import { greeting, greetingDescription, linkedinUrl, githubUrl, cvLink } from 'data/config';
+import { greeting, greetingDescription, linkedinUrl, githubUrl, cvLink, aboutme} from 'data/config';
 import linkedinLogo from 'assets/illustrations/linkedin_logo.png';
 import githubLogo from 'assets/illustrations/github_logo.png';
 import linkedinLogoWhite from 'assets/illustrations/linkedin_white.png';
 import githubLogoWhite from 'assets/illustrations/github_white.png';
 
-import { IntroWrapper, Details, Thumbnail } from './styles';
+import { IntroWrapper, Details, Thumbnail, AboutStyle } from './styles';
+
 
 export const Intro = () => {
   const { theme } = useContext(ThemeContext);
+
 
   return (
     <div>
@@ -28,7 +30,7 @@ export const Intro = () => {
               Hire me
             </Button>{' '}
             <a href={cvLink} target="_blank" rel="noreferrer">
-              <Button className="view-cv">View CV</Button>
+              <Button className="view-cv">View Resume</Button>
             </a>
           </div>
           <div className="social">
@@ -40,6 +42,9 @@ export const Intro = () => {
               <img width="45" src={theme === 'light' ? githubLogo : githubLogoWhite} alt="GitHub" />
             </a>
           </div>
+          <AboutStyle>
+            <h3>{aboutme}</h3>
+          </AboutStyle>
         </Details>
         <Thumbnail>
           <img src={heroImage} alt="Crio.Do" />
